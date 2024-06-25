@@ -1,0 +1,122 @@
+@charset 'UTF-8';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+:root{
+    /* ## Cores */
+
+/* ### Primário */
+
+/* (fundo principal) */
+--Azul-muito-escuro: hsl(233, 47%, 7%);
+
+/* (fundo do cartão) */
+--Azul-escuro-dessaturado: hsl(244, 38%, 16%);
+
+/* (acento) */
+--Violeta-suave: hsl(277, 64%, 61%);
+
+--Violeta-Suave: hsla(277, 94%, 41%,60%);
+
+/* ### Neutro */
+
+/* (título principal, estatísticas) */
+--Branco: hsl(0, 0%, 100%);
+
+/* (parágrafo principal) */
+--Branco-ligeiramente-transparente: hsla(0, 0%, 100%, 0,75);
+
+/* (títulos estatísticos) */
+--branco-ligeiramente-transparente: hsla(0, 0%, 100%, 0,6);
+}
+body{
+    position: relative;
+    background: var(--Azul-muito-escuro);
+    width: 100%;
+    height: 100vh;
+}
+section{
+    position: absolute;
+    background: var(--Azul-escuro-dessaturado);
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 10px;
+    border-radius: 10px;
+}
+section div.conteudo h1{
+    font-size: 2em;
+}
+section div.conteudo span{
+    color: var(--Violeta-suave);
+}
+section p{
+    color: var(--branco-ligeiramente-transparente);
+}
+section div.foto{
+    background: linear-gradient(var(--Violeta-Suave),var(--Violeta-Suave)), url('images/image-header-mobile.jpg');
+    
+    background-size: contain;
+    background-repeat:no-repeat ;
+    width:218px ;
+    height: 160px;
+    border-radius: 10px 10px 0px 0px;
+    
+    
+}
+section div.conteudo{
+    padding: 20px;
+    
+}
+section div.conteudo > p#p{
+    margin-bottom: 10px;
+    padding: 10px 5px;
+    line-height: 17px;
+}
+section div.conteudo div.divi{
+    margin-top: 20px;
+}
+@media screen and (min-width:768px){
+    section{
+        display: flex;
+        flex-flow:row-reverse;
+        height: 375px;
+        border-radius: 0px;
+    }
+    section div.foto{
+        background:linear-gradient(var(--Violeta-Suave),var(--Violeta-Suave)), url('images/image-header-desktop.jpg');
+        border-radius: 0px;
+        width:450px ;
+        height: 373px;
+                       
+    }
+    section div.conteudo{
+        width: 500px;
+        font-size:1.7em;
+        padding:50px;
+        
+    }
+    section div.conteudo h1{
+        text-align:left;
+    }
+    section div.conteudo > p#p{
+        line-height:30px;
+        padding-top:30px;
+        text-align:left;
+        margin-right:30px;
+        font-size:0.9em;
+    }
+    section div.conteudo div.sla{
+        display: flex;
+        justify-content: space-between;
+        font-size:0.8em;
+        margin-right:50px;
+    }
+}
